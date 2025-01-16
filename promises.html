@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AxT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="journey-container">
+            <p id="our-journey" style="cursor:pointer; font-size: 24px; color: #fff; text-align: center; background-color: #000; padding: 15px; border-radius: 10px;">You are My Sunshine</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="bplus.html">B+</a></li>
+            <li><a href="promises.html">Promises</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="love-letter.html">Love Letter</a></li>
+            <li><a href="future-plans.html">Creative</a></li>
+        </ul>
+    </nav>
+    <audio id="background-music" loop>
+        <source src="audio/sunshine.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        // Handle music play on "Our Journey" click
+        document.getElementById('our-journey').addEventListener('click', function() {
+            const audio = document.getElementById('background-music');
+            audio.play().catch(error => {
+                console.log('Error playing audio:', error);
+            });
+            // Optionally, change text to indicate music is playing
+            this.innerHTML = "Music Playing... 🎶";
+            this.style.backgroundColor = "#444";  // Change background on click
+            this.style.color = "#fff";  // Ensure text is visible
+        });
+    </script>
+    <!-- Welcome Section -->
+    <header class="welcome-section">
+        <h1>Pinky Promises<3</h1>
+        <p>for a brighter future</p>
+    </header>
+
+    <!-- Slideshow Gallery Section -->
+    <section class="slideshow">
+        <div class="letter">
+            <p style="font-size: 20px;">
+                <ul style="font-size: 20px;">
+                    <li>No Packaged food, in any way, shape or form, other than makhane.</li>
+                    <li>No Samosa, Wada, etc. from Kresit/CHEA</li>
+                    <li>Exercise minimum 2x a week, irrespective of anything</li>
+                    <li>Try to resolve fights as soon as possible.</li>
+                    <li>Always care for each other</li>
+                    <li>Always keep each other accountables</li>
+                </ul>
+            </p>
+            <br>
+
+    
+    <!-- Reveal Button -->
+            <button onclick="showAlert()">Lock In!</button>
+        </div>
+    
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Happy Annniversary My ❤️ <3</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

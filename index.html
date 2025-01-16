@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AxT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="journey-container">
+            <p id="our-journey" style="cursor:pointer; font-size: 24px; color: #fff; text-align: center; background-color: #000; padding: 15px; border-radius: 10px;">You are My Sunshine</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="bplus.html">B+</a></li>
+            <li><a href="promises.html">Promises</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="love-letter.html">Love Letter</a></li>
+            <li><a href="future-plans.html">Creative</a></li>
+        </ul>
+    </nav>
+    <audio id="background-music" loop>
+        <source src="audio/sunshine.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        // Handle music play on "Our Journey" click
+        document.getElementById('our-journey').addEventListener('click', function() {
+            const audio = document.getElementById('background-music');
+            audio.play().catch(error => {
+                console.log('Error playing audio:', error);
+            });
+            // Optionally, change text to indicate music is playing
+            this.innerHTML = "Music Playing... 🎶";
+            this.style.backgroundColor = "#444";  // Change background on click
+            this.style.color = "#fff";  // Ensure text is visible
+        });
+    </script>
+    <!-- Welcome Section -->
+    <header class="welcome-section">
+        <h1>with you, life seems beautiful</h1>
+        <p>you add colour to my black and white life <3</p>
+    </header>
+
+    <!-- Slideshow Gallery Section -->
+    <section class="slideshow">
+        <div class="slides fade">
+            <img src="images/image1.png" alt="Moment 1">
+        </div>
+        <div class="slides fade">
+            <img src="images/image2.jpg" alt="Moment 2">
+        </div>
+        <div class="slides fade">
+            <img src="images/image3.jpg" alt="Moment 3">
+        </div>
+        <div class="slides fade">
+            <img src="images/image4.jpg" alt="Moment 1">
+        </div>
+        <div class="slides fade">
+            <img src="images/image5.jpg" alt="Moment 2">
+        </div>
+        <div class="slides fade">
+            <img src="images/image6.jpg" alt="Moment 3">
+        </div>
+        <div class="slides fade">
+            <img src="images/image7.jpg" alt="Moment 1">
+        </div>
+        <div class="slides fade">
+            <img src="images/image8.jpg" alt="Moment 2">
+        </div>
+        <div class="slides fade">
+            <img src="images/image9.jpg" alt="Moment 3">
+        </div>
+        <div class="slides fade">
+            <img src="images/image10.jpg" alt="Moment 1">
+        </div>
+        <div class="slides fade">
+            <img src="images/image11.jpg" alt="Moment 2">
+        </div>
+        <div class="slides fade">
+            <img src="images/image12.jpg" alt="Moment 3">
+        </div>
+        <div class="slides fade">
+            <img src="images/image13.jpg" alt="Moment 1">
+        </div>
+        <div class="slides fade">
+            <img src="images/image14.jpg" alt="Moment 2">
+        </div>
+        <div class="slides fade">
+            <img src="images/image15.jpg" alt="Moment 3">
+        </div>
+        <div class="slides fade">
+            <img src="images/image16.jpg" alt="Moment 1">
+        </div>
+        <div class="slides fade">
+            <img src="images/image17.jpg" alt="Moment 2">
+        </div>
+        <div class="slides fade">
+            <img src="images/image18.jpg" alt="Moment 3">
+        </div>
+        <div class="slides fade">
+            <img src="images/image19.jpg" alt="Moment 1">
+        </div>
+        <div class="slides fade">
+            <img src="images/image20.jpg" alt="Moment 2">
+        </div>
+        <div class="slides fade">
+            <img src="images/image21.jpg" alt="Moment 3">
+        </div>
+        <div class="slides fade">
+            <img src="images/image22.jpg" alt="Moment 1">
+        </div>
+        <div class="slides fade">
+            <img src="images/image23.jpg" alt="Moment 2">
+        </div>
+        <div class="slides fade">
+            <img src="images/image24.jpg" alt="Moment 3">
+        </div>
+        <div class="slides fade">
+            <img src="images/image25.jpg" alt="Moment 1">
+        </div>
+        <div class="slides fade">
+            <img src="images/image26.jpg" alt="Moment 2">
+        </div>
+
+        <!-- Navigation Arrows -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Happy Annniversary My ❤️ <3</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

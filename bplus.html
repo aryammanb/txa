@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AxT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="journey-container">
+            <p id="our-journey" style="cursor:pointer; font-size: 24px; color: #fff; text-align: center; background-color: #000; padding: 15px; border-radius: 10px;">You are My Sunshine</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="bplus.html">B+</a></li>
+            <li><a href="promises.html">Promises</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="love-letter.html">Love Letter</a></li>
+            <li><a href="future-plans.html">Creative</a></li>
+        </ul>
+    </nav>
+    <audio id="background-music" loop>
+        <source src="audio/sunshine.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        // Handle music play on "Our Journey" click
+        document.getElementById('our-journey').addEventListener('click', function() {
+            const audio = document.getElementById('background-music');
+            audio.play().catch(error => {
+                console.log('Error playing audio:', error);
+            });
+            // Optionally, change text to indicate music is playing
+            this.innerHTML = "Music Playing... 🎶";
+            this.style.backgroundColor = "#444";  // Change background on click
+            this.style.color = "#fff";  // Ensure text is visible
+        });
+    </script>
+    <!-- Welcome Section -->
+    <header class="welcome-section">
+        <h1>When things get difficult, Let's not forget to be positive</h1>
+        <p>I will always be the Jojo to your Soso</p>
+    </header>
+
+    <!-- Slideshow Gallery Section -->
+    <section class="slideshow">
+        <div class="letter">
+            <image src="images/background.jpeg"></image><br>
+
+    
+    <!-- Reveal Button -->
+            <button onclick="showRandomMessage()">Feeling Negative :(</button>
+            <p id="message"></p>
+
+            <script>
+              // Define an array of messages
+              const messages = [
+                "After all we have gone through, we can go through anything",
+                "You are the love of my life, we are made for each other. Give me a call darling- always a pleasure to speak to you.",
+                "You make my world brighter and happier! 🌟",
+                "Fights are meaningless and temporary, Here's to endless laughter and love together! 💕",
+                "I am so lucky to have you in my life. We WILL work things out 💖",
+                "Forever grateful for our beautiful journey! We have a long beautiful journey still to go darling🥰",
+                "I love you infinity",
+                "I love you ray of light.",
+                "If you are reading this, I won the I love you more argument",
+                "You are the most amazing, beautiful person I have ever met <3",
+                "We are soul bonded <3",
+                "We fight, we talk, we sort, we come back. Because the love we have is worth it.",
+                "Let's just forget everything and go on a date, and have loads of fun.",
+                "We are pieces of each others jigsaw puzzle",
+                "Our love is stronger than any problem we have",
+                "Just come melt into my arms, and let's forget everything.",
+                "I am always here for you, and I will always love you.",
+                "There is no fight more important than the love we have.",
+                "When the world is in your corner, I will be one of them, when there is only one person in your corner, I will be that person, and when there is nobody, it means I am dead."
+              ];
+          
+              // Function to display a random message
+              function showRandomMessage() {
+                // Get a random message
+                const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+                // Display it as a paragraph
+                document.getElementById('message').innerText = randomMessage;
+              }
+            </script>
+        </div>
+    
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Happy Annniversary My ❤️ <3</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

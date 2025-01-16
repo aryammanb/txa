@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AxT</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+</head>
+<body>
+    <script>
+        // Initialize Firebase
+        const firebaseConfig = {
+                      apiKey: "AIzaSyByBIGTHWERjtAfYzdUPLfbo6WygV5DVGU",
+                      authDomain: "dateideasweb.firebaseapp.com",
+                      databaseURL: "https://dateideasweb-default-rtdb.firebaseio.com",
+                      projectId: "dateideasweb",
+                      storageBucket: "dateideasweb.firebasestorage.app",
+                      messagingSenderId: "997144103517",
+                      appId: "1:997144103517:web:b3b7db5df27ada87a99bb4",
+                      measurementId: "G-8FCF9279W7"
+                    };
+    
+        firebase.initializeApp(firebaseConfig);
+    
+        // Get a reference to the database
+        const db = firebase.database();
+        const ref = db.ref('ideas'); // Using the 'ideas' path
+    
+
+    
+        // Push the new user to the database
+
+        function addDateIdea(){
+            const input = document.getElementById('date-idea-input');
+            const newIdea = input.value.trim(); // Get and trim user input
+            ref.push(newIdea);
+            input.value = '';
+        }
+        function fetchRandomIdea() {
+
+
+            ref.once('value').then(snapshot => {
+                const entries = snapshot.val();
+                if (entries) {
+                const randomIndex = Math.floor(Math.random() * Object.keys(entries).length);
+                const randomEntry = entries[Object.keys(entries)[randomIndex]];
+                // Do something with the randomEntry (e.g., display it)
+                console.log("Random Entry:", randomEntry);
+                const ideaParagraph = document.getElementById('random-idea');
+                ideaParagraph.textContent = `Random Date Idea: ${randomEntry}`;
+                } else {
+                console.log("No entries found in the 'ideas' node.");
+                }
+            }).catch(error => {
+                console.error("Error fetching data:", error);
+            });
+            }
+        const db2 = firebase.database();
+        const ref2 = db2.ref('memories');
+        function addMemory(){
+            const input = document.getElementById('memory-input');
+            const newIdea = input.value.trim(); // Get and trim user input
+            ref2.push(newIdea);
+            input.value = '';
+        }
+        function fetchRandomMemory() {
+
+
+            ref2.once('value').then(snapshot => {
+                const entries = snapshot.val();
+                if (entries) {
+                const randomIndex = Math.floor(Math.random() * Object.keys(entries).length);
+                const randomEntry = entries[Object.keys(entries)[randomIndex]];
+                // Do something with the randomEntry (e.g., display it)
+                console.log("Random Entry:", randomEntry);
+                const ideaParagraph = document.getElementById('random-memory');
+                ideaParagraph.textContent = `Random Memory: ${randomEntry}`;
+                } else {
+                console.log("No entries found in the 'ideas' node.");
+                }
+            }).catch(error => {
+                console.error("Error fetching data:", error);
+            });
+            }
+            const db3 = firebase.database();
+        const ref3 = db3.ref('music');
+        function addSong(){
+            const input = document.getElementById('music-input');
+            const newIdea = input.value.trim(); // Get and trim user input
+            ref3.push(newIdea);
+            input.value = '';
+        }
+        function fetchRandomSong() {
+
+
+            ref3.once('value').then(snapshot => {
+                const entries = snapshot.val();
+                if (entries) {
+                const randomIndex = Math.floor(Math.random() * Object.keys(entries).length);
+                const randomEntry = entries[Object.keys(entries)[randomIndex]];
+                // Do something with the randomEntry (e.g., display it)
+                console.log("Random Entry:", randomEntry);
+                const ideaParagraph = document.getElementById('random-song');
+                ideaParagraph.textContent = `Random Song: ${randomEntry}`;
+                } else {
+                console.log("No entries found in the 'ideas' node.");
+                }
+            }).catch(error => {
+                console.error("Error fetching data:", error);
+            });
+            }
+      </script>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="journey-container">
+            <p id="our-journey" style="cursor:pointer; font-size: 24px; color: #fff; text-align: center; background-color: #000; padding: 15px; border-radius: 10px;">You are My Sunshine</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="bplus.html">B+</a></li>
+            <li><a href="promises.html">Promises</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="love-letter.html">Love Letter</a></li>
+            <li><a href="future-plans.html">Creative</a></li>
+        </ul>
+    </nav>
+    <audio id="background-music" loop>
+        <source src="audio/sunshine.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        // Handle music play on "Our Journey" click
+        document.getElementById('our-journey').addEventListener('click', function() {
+            const audio = document.getElementById('background-music');
+            audio.play().catch(error => {
+                console.log('Error playing audio:', error);
+            });
+            // Optionally, change text to indicate music is playing
+            this.innerHTML = "Music Playing... 🎶";
+            this.style.backgroundColor = "#444";  // Change background on click
+            this.style.color = "#fff";  // Ensure text is visible
+        });
+    </script>
+    <!-- Welcome Section -->
+    <header class="welcome-section">
+        <h1>We Should Never Run out of stuff to do</h1>
+        <p>Let's keep adding new ideas and old memories here.</p>
+    </header>
+
+    <!-- Slideshow Gallery Section -->
+    <section class="slideshow">
+        <div class="letter">
+            <div id="date-ideas-container">
+                <input type="text" id="date-idea-input" placeholder="Enter a date idea..." />
+                <br />
+                <button onclick="addDateIdea()">Add Date Idea</button>
+                <button onclick="fetchRandomIdea()">Fetch Random Date Idea</button>
+                <p id="random-idea"></p><br>
+            </div>
+            <div id="memories">
+                <input type="text" id="memory-input" placeholder="Enter a memory..." />
+                <br />
+                <button onclick="addMemory()">Add Memory</button>
+                <button onclick="fetchRandomMemory()">Fetch Random Memory</button>
+                <p id="random-memory"></p><br>
+            </div>
+            <div id="music">
+                <input type="text" id="music-input" placeholder="Enter a song..." />
+                <br />
+                <button onclick="addSong()">Add Song</button>
+                <button onclick="fetchRandomSong()">Fetch Random Song</button>
+                <p id="random-song"></p><br>
+            </div>
+        </div>
+    
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Happy Annniversary My ❤️ <3</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

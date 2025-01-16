@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Firebase Data Push</title>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+</head>
+<body>
+  <script>
+    // Initialize Firebase
+    const firebaseConfig = {
+                  apiKey: "AIzaSyByBIGTHWERjtAfYzdUPLfbo6WygV5DVGU",
+                  authDomain: "dateideasweb.firebaseapp.com",
+                  databaseURL: "https://dateideasweb-default-rtdb.firebaseio.com",
+                  projectId: "dateideasweb",
+                  storageBucket: "dateideasweb.firebasestorage.app",
+                  messagingSenderId: "997144103517",
+                  appId: "1:997144103517:web:b3b7db5df27ada87a99bb4",
+                  measurementId: "G-8FCF9279W7"
+                };
+
+    firebase.initializeApp(firebaseConfig);
+
+    // Get a reference to the database
+    const database = firebase.database();
+    const usersRef = database.ref('users');
+
+    // Create a new user object
+    const newUser = {
+      name: "John Doe",
+      email: "john.doe@example.com"
+    };
+
+    // Push the new user to the database
+    usersRef.push(newUser);
+  </script>
+</body>
+</html>

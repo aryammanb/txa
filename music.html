@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AxT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="journey-container">
+            <p id="our-journey" style="cursor:pointer; font-size: 24px; color: #fff; text-align: center; background-color: #000; padding: 15px; border-radius: 10px;">You are My Sunshine</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="bplus.html">B+</a></li>
+            <li><a href="promises.html">Promises</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="love-letter.html">Love Letter</a></li>
+            <li><a href="future-plans.html">Creative</a></li>
+        </ul>
+    </nav>
+    <audio id="background-music" loop>
+        <source src="audio/sunshine.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        // Handle music play on "Our Journey" click
+        document.getElementById('our-journey').addEventListener('click', function() {
+            const audio = document.getElementById('background-music');
+            audio.play().catch(error => {
+                console.log('Error playing audio:', error);
+            });
+            // Optionally, change text to indicate music is playing
+            this.innerHTML = "Music Playing... 🎶";
+            this.style.backgroundColor = "#444";  // Change background on click
+            this.style.color = "#fff";  // Ensure text is visible
+        });
+    </script>
+    <!-- Welcome Section -->
+    <header class="welcome-section">
+        <h1>🎵I can't help falling in love with you <3</h1>
+        <p>To a musical future together</p>
+    </header>
+
+    <!-- Slideshow Gallery Section -->
+    <section class="slideshow">
+        <div class="music-container">
+            <h1>Choose a Memory 🎵</h1>
+    <br></br>
+            <!-- Audio Player -->
+            <audio id="music-player" controls>
+                <source id="audio-source" src="song1.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+    
+            <!-- Playlist -->
+            <div class="playlist">
+                <h3>Select a Song:</h3>
+                <button onclick="playSong('audio/song2.mp3')">Can't Help Falling in Love</button>
+                <button onclick="playSong('audio/song3.mp3')">Strawberries and Cigarettes</button>
+                <button onclick="playSong('audio/song4.mp3')">Pehla Pehla Pyaar</button>
+                <button onclick="playSong('audio/song5.mp3')">Raabta</button>
+                <button onclick="playSong('audio/song6.mp3')">Perfect</button>
+                <button onclick="playSong('audio/song7.mp3')">Samjhaawan</button>
+                <button onclick="playSong('audio/song8.mp3')">Yeh Tune Kya Kiya</button>
+                <button onclick="playSong('audio/song9.mp3')">Afreen Afreen</button>
+                <button onclick="playSong('audio/song10.mp3')">Pehle Ka Naata</button>
+                <button onclick="playSong('audio/song11.mp3')">You are the reason</button>
+                <button onclick="playSong('audio/song12.mp3')">Tenerife Sea</button>
+                <button onclick="playSong('audio/song13.mp3')">Thinking Out Loud</button>
+                <button onclick="playSong('audio/song14.mp3')">Yellow Paper Daisy</button>
+                <button onclick="playSong('audio/song15.mp3')">Abhi Na Jao</button>
+            </div>
+        </div>
+    
+        <script>
+            const musicPlayer = document.getElementById("music-player");
+            const audioSource = document.getElementById("audio-source");
+    
+            // Function to change song
+            function playSong(song) {
+                audioSource.src = song;
+                musicPlayer.load();  // Load the new song
+                musicPlayer.play();  // Play it automatically
+            }
+        </script>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Happy Annniversary My ❤️ <3</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

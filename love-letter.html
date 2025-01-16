@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AxT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="journey-container">
+            <p id="our-journey" style="cursor:pointer; font-size: 24px; color: #fff; text-align: center; background-color: #000; padding: 15px; border-radius: 10px;">You are My Sunshine</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="bplus.html">B+</a></li>
+            <li><a href="promises.html">Promises</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="love-letter.html">Love Letter</a></li>
+            <li><a href="future-plans.html">Creative</a></li>
+        </ul>
+    </nav>
+    <audio id="background-music" loop>
+        <source src="audio/sunshine.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        // Handle music play on "Our Journey" click
+        document.getElementById('our-journey').addEventListener('click', function() {
+            const audio = document.getElementById('background-music');
+            audio.play().catch(error => {
+                console.log('Error playing audio:', error);
+            });
+            // Optionally, change text to indicate music is playing
+            this.innerHTML = "Music Playing... 🎶";
+            this.style.backgroundColor = "#444";  // Change background on click
+            this.style.color = "#fff";  // Ensure text is visible
+        });
+    </script>
+    <!-- Welcome Section -->
+    <header class="welcome-section">
+        <h1>I have encrypted my love for you<3</h1>
+        <p>hope you love a simple puzzle</p>
+    </header>
+
+    <!-- Slideshow Gallery Section -->
+    <section class="slideshow">
+        <div class="letter">
+            <p id="encrypted-text"style="font-size: 20px;">Nz Txffu Ebsmjoh Ubowj,<br>
+                J mpwf zpv efbsmz boe up cjut. Zpv csjoh nz mjgf bmjwf. <br>
+                Uif npsf J hfu up lopx zpv, uif npsf zpv pqfo vq up nf, uif npsf J tff uif tpvm xjuijo zpv, uif npsf J gbmm jo mpwf xjui zpv.<br>
+                Xf usvmz bsf tpvm cpoefe.<br>
+                Zpv bsf uif nptu cfbvujgvm qfstpo jo uif xpsme, jotjef boe pvu.<br>
+                J xbou up xblf vq ofyu up zpv fwfsz ebz boe J xbou zpv up bmxbzt gffm tbgf bspvoe nf cbcz.<br>
+                Zpv bsf nz xipmf xpsme boe J ofwfs xboob uijol bcpvu xibu b mjgf xjuipvu zpv mpplt mjlf.<br>
+                Nz dpnqbojpo.<br>
+                Nz tpvmnbuf.<br>
+                Nz Mpwf.</p>
+            <p id="decrypted-text" style="display: none;font-size: 20px;">
+                My Sweet Darling Tanvi,<br>
+                I love you dearly and to bits. You bring my life alive. <br>
+                The more I get to know you, the more you open up to me, the more I see the soul within you, the more I fall in love with you.<br>
+                We truly are soul bonded.<br>
+                You are the most beautiful person in the world, inside and out.<br>
+                I want to wake up next to you every day and I want you to always feel safe around me baby.<br>
+                You are my whole world and I never wanna think about what a life without you looks like.<br>
+                My companion.<br>
+                My soulmate.<br>
+                My Love.
+            </p>
+    
+    <!-- Reveal Button -->
+            <button onclick="revealText()">Reveal❤️</button>
+        </div>
+    
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Happy Annniversary My ❤️ <3</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
