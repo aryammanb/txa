@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="journey-container">
+            <p id="our-journey" style="cursor:pointer; font-size: 24px; color: #fff; text-align: center; background-color: #000; padding: 15px; border-radius: 10px;">
+                Happy Birthday Vi
+            </p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="bplus.html">B+</a></li>
+            <li><a href="promises.html">Promises</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="love-letter.html">Love Letter</a></li>
+            <li><a href="future-plans.html">Creative</a></li>
+            <li><a href="happy-birthday.html">Birthday</a></li>
+        </ul>
+    </nav>
+
+    <!-- Background Music -->
+    <audio id="background-music" loop>
+        <source src="audio/happy.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        document.getElementById('our-journey').addEventListener('click', function() {
+            const audio = document.getElementById('background-music');
+            audio.play().catch(error => {
+                console.log('Error playing audio:', error);
+            });
+            this.innerHTML = "Music Playing... 🎶";
+            this.style.backgroundColor = "#444";
+        });
+    </script>
+
+    <!-- Welcome Section -->
+  <header class="welcome-section">
+    <h1>🎂 Happy Birthday My Viiiiiiii</h1>
+    <p>May God Bless you with Health, Wealth and Happiness</p>
+  </header>
+
+  <!-- Fun Birthday Message Section -->
+  <section class="slideshow">
+    <div class="letter">
+      <p style="font-size: 20px;">
+        Today, I want to first thank you for being you.<br><br>
+
+        Keep saying "aapadi" whenever you're exhausted.<br>
+
+        Keep forgetting your right from your left.<br>
+
+        Keep finding pleasure in doing the little things right.<br>
+
+	Keep working your butt off to achieve your dreams.<br>
+	
+	Keep standing up for what you believe in.<br>
+
+	Keep expressing your emotions strongly and never back down from them.<br>
+
+        Keep doing every single thing you do- and know that you are loved, seen, appreciated and admired in every possible way. <br><br>
+
+	Stay the same and always love yourself and be happy- cause there is nobody in the world who deserves it more.
+      </p>
+
+      <button onclick="startConfetti()" style="margin-top: 20px; padding: 12px 24px; font-size: 16px; background-color: #f06292; color: white; border: none; border-radius: 10px; cursor: pointer;">
+        Confettviiiii!!!
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Always celebrating you — today and forever. ❤️</p>
+  </footer>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Confetti Script -->
+  <script>
+    const canvas = document.getElementById("confetti-canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let confetti = [];
+
+    function randomColor() {
+      const colors = ["#ff66b2", "#ffccff", "#ffff99", "#ccffcc", "#66ffff", "#ffc107"];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    function createConfetti() {
+      for (let i = 0; i < 200; i++) {
+        confetti.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * -canvas.height,
+          r: Math.random() * 6 + 2,
+          d: Math.random() * 4 + 1,
+          color: randomColor(),
+        });
+      }
+    }
+
+    function drawConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      confetti.forEach(c => {
+        ctx.beginPath();
+        ctx.arc(c.x, c.y, c.r, 0, Math.PI * 2);
+        ctx.fillStyle = c.color;
+        ctx.fill();
+      });
+      updateConfetti();
+    }
+
+    function updateConfetti() {
+      confetti.forEach(c => {
+        c.y += c.d;
+        if (c.y > canvas.height) {
+          c.y = 0;
+          c.x = Math.random() * canvas.width;
+        }
+      });
+    }
+
+    let confettiInterval;
+    function startConfetti() {
+      confetti = [];
+      createConfetti();
+      if (confettiInterval) clearInterval(confettiInterval);
+      confettiInterval = setInterval(() => {
+        drawConfetti();
+      }, 16);
+    }
+  </script>
+    <script src="script.js"></script>
+</body>
+</html>
