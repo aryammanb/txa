@@ -1,4 +1,14 @@
 /* Reset */
+
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* So clicks go through it */
+    z-index: 9999; /* Make sure it's above everything */
+}
 * {
     margin: 0;
     padding: 0;
